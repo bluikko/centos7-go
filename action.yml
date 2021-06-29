@@ -1,0 +1,14 @@
+name: 'centos7-go'
+description: 'CentOS7 with go and make'
+branding:
+  icon: 'package'  
+  color: 'green'
+inputs:
+  build_opts:
+    description: 'Options passed to make'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.build_opts }}
